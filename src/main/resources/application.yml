@@ -1,0 +1,10 @@
+telegram:
+  bot:
+    username: YOUR_BOT_USERNAME
+    token: YOUR_BOT_TOKEN
+
+logging:
+  level:
+    root: INFO
+    io.github.sumrakai.flibustatgbot: INFO
+
