@@ -1,22 +1,23 @@
 ## Flibusta Telegram Bot
 
-Простой Telegram‑бот на Java 21 / Spring Boot 3, который ищет книги на `flibusta.is` и отдаёт их в форматах FB2/EPUB/MOBI.
+Simple Telegram bot written in Java 21 / Spring Boot 3.  
+It searches books on `flibusta.is` and sends them in FB2/EPUB/MOBI formats.
 
-### Запуск
+### How to run
 
-Собрать:
+Build:
 
 ```bash
 ./gradlew clean build
 ```
 
-Запустить:
+Run:
 
 ```bash
 java -jar build/libs/flibustaTgBot-0.0.1-SNAPSHOT.jar
 ```
 
-В `application.yml` прописать свои данные бота:
+Configure your bot credentials in `application.yml`:
 
 ```yaml
 telegram:
@@ -25,14 +26,12 @@ telegram:
     token: YOUR_BOT_TOKEN
 ```
 
-После старта бота:
+After the bot is started:
 
-- `/start` — краткая инструкция;
-- любой текст — поиск на flibusta и список до 7 книг с кнопками FB2/EPUB/MOBI.
+- `/start` — short help;
+- any text — search on Flibusta and a list of up to 7 books with FB2/EPUB/MOBI buttons.
 
-### Нюансы с сетью
+### Network notes
 
-- `flibusta.is` часто недоступен напрямую (блокировки, DPI).
-- Если в логах/через `curl https://flibusta.is` видишь `Connection reset` или таймауты — запускай бота за VPN/прокси на этой же машине.
-
-
+- `https://flibusta.is` is often blocked or filtered (DPI, ISP blocking).
+- If you see `Connection reset` or timeouts in logs / `curl https://flibusta.is`, run the bot behind a VPN/proxy on the same machine.
